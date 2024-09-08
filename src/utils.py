@@ -1,12 +1,9 @@
 import torch
 
 
-def convert_to_vector(input_size):
-    """
-    Заглушка для функции, преобразующей текстовый ввод в тензорный вектор.
-    Требуется реализация нормализации текста и векторизации.
-    """
-    return torch.randn(1, input_size)  # Замените на реальную логику векторизации
+def convert_to_vector(text, vocab):
+    indices = [vocab.get(word, 0) for word in text.lower().split()]
+    return torch.tensor(indices)  # Замените на реальную логику векторизации
 
 
 def get_user_response():
