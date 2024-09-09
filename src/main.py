@@ -1,7 +1,7 @@
-from model import SimpleNN
+from src.models.model import SimpleNN
 from src.database import VocabularyDatabase
 from src.phrase_processor import PhraseProcessor
-from trainer import ModelTrainer
+from src.training.trainer import ModelTrainer
 from chat import chat
 
 # Инициализация базы данных и обработчика фраз

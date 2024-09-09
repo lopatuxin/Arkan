@@ -12,3 +12,13 @@ class PhraseProcessor:
                 word_id = self.vocabulary_db.get_word_id(word)
             indices.append(word_id)
         return indices
+
+    def decode_vector(self, vector):
+        # Примерный метод для декодирования вектора в текст
+        words = []
+        for index in vector:
+            self.vocabulary_db.get_word_by_id(int(index))
+            result = self.vocabulary_db.cursor.fetchone()
+            if result:
+                words.append(result[0])
+        return ' '.join(words)

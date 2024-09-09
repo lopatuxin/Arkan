@@ -3,7 +3,8 @@ import torch
 
 def convert_to_vector(text, phrase_processor):
     indices = phrase_processor.process_phrase(text)
-    return torch.tensor(indices)
+    tensor = torch.tensor(indices)
+    return tensor
 
 
 def get_user_response():

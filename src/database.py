@@ -28,5 +28,10 @@ class VocabularyDatabase:
         result = self.cursor.fetchone()
         return result[0] if result else None
 
+    def get_word_by_id(self, word_id):
+        self.cursor.execute('SELECT word FROM vocabulary WHERE id = ?', (word_id,))
+        result = self.cursor.fetchone()
+        return result[0] if result else None
+
     def close(self):
         self.connection.close()
